@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainarea {
+            width: 100%;
+            height: 230%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+
+        }
+
+        #toparea {
+            width: 100%;
+            height: 5%;
+            position: sticky;
+            left: 0;
+            top: 0;
+            z-index: 4;
+            background-color: #055BDD;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #leftlogo {
+            height: 10vh;
+            width: 10vh;
+            left: 1vh;
+            position: relative;
+            margin-right: 2vh;
+            background-image: url(logo.png);
+            background-size: contain;
+            transition: all 200ms;
+        }
+
+        #leftlogo:hover {
+            cursor: pointer;
+            filter: brightness(0.7);
+
+        }
+
+        #lefttext {
+            color: white;
+            font-family: "Inter", sans-serif;
+            position: relative;
+            font-size: 3vh;
+        }
+
+        #profilelogo {
+            height: 7vh;
+            width: 7vh;
+            background-image: url(ellen.png);
+            background-size: cover;
+            border-radius: 100%;
+            right: -110vh;
+            position: relative;
+            margin-left: 5vh;
+            transition: all 500ms;
+        }
+
+        #profilelogo:hover {
+            filter: brightness(0.4);
+            cursor: pointer;
+        }
+
+        #topbutonsback {
+            height: 40%;
+            width: 30%;
+            position: relative;
+            left: 40vh;
+            display: flex;
+            font-family: "Inter", sans-serif;
+
+        }
+
+        .topbutons {
+            height: 100%;
+            width: 30%;
+            font-size: 2vh;
+            color: white;
+            text-align: center;
+            display: grid;
+            align-items: center;
+        }
+
+        .topbutons:hover {
+            filter: brightness(0.7);
+            cursor: pointer;
+        }
+
+        #profilearea {
+            height: 50vh;
+            width: 30vh;
+            background-color: #80808098;
+            position: absolute;
+            right: 1vh;
+            z-index: 3;
+            backdrop-filter: blur(0.3vh);
+        }
+
+        .topprofilbutons {
+            height: calc(100%/6);
+            color: white;
+
+            display: grid;
+            align-items: center;
+            padding-left: 3vh;
+            font-family: "Inter", sans-serif;
+            font-size: 2.5vh;
+            transition: all 1s;
+        }
+
+        .topprofilbutons:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        #profilepanel {
+            padding-left: 10vh;
+            font-size: 2.9vh;
+        }
+
+        #profilepanellogo {
+            background-image: url(ellen.png);
+            background-size: cover;
+            border-radius: 100%;
+            height: 5vh;
+            width: 5vh;
+            position: absolute;
+            left: 2.5vh;
+        }
+
+        #newone {
+            height: 50vh;
+            width: 150vh;
+            margin: auto;
+            top: 13vh;
+            position: relative;
+        }
+
+        #pageoneimg {
+            height: 90%;
+            aspect-ratio: 0.7/1;
+            object-fit: cover;
+        }
+
+        #newtwo {
+            height: 50vh;
+            width: 150vh;
+            margin: auto;
+            top: 30vh;
+            position: relative;
+        }
+
+        #pagetwoimg {
+            height: 90%;
+            aspect-ratio: 0.7/1;
+            object-fit: cover;
+            position: absolute;
+            right: 0;
+        }
+
+        #profileback {
+            background-color: #868686;
+            height: 60vh;
+            width: 120vh;
+            margin: auto;
+            position: relative;
+            top: 10vh;
+            border-radius: 1vh;
+            overflow: hidden;
+        }
+
+        #leftside {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 20%;
+            background-color: #5f5f5f;
+
+        }
+
+        .leftbutons {
+            color: white;
+            font-family: "Inter", sans-serif;
+            font-size: 2.9vh;
+            height: 6vh;
+            padding-left: 3vh;
+            padding-top: 4vh;
+
+        }
+
+        .leftbutons:hover {
+            filter: brightness(0.7);
+            cursor: pointer;
+        }
+
+        .rightside {
+
+            height: 100%;
+            width: 80%;
+            right: 0;
+            top: 0;
+            position: absolute;
+        }
+
+        #mesageleft {
+            position: relative;
+            background-color: rgb(61, 61, 61);
+
+            height: 100%;
+            width: 30vh;
+        }
+
+        .mesageuser {
+            color: white;
+            font-family: "Inter", sans-serif;
+            font-size: 2.9vh;
+            height: 8vh;
+            width: 30vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .mesageuser:hover {
+            background-color: rgb(39, 39, 39);
+            cursor: pointer;
+        }
+
+        .mesagepp {
+            height: 7vh;
+            aspect-ratio: 1/1;
+            position: absolute;
+            border-radius: 100%;
+            object-fit: cover;
+
+            left: 0.5vh;
+        }
+
+        .mesagetext {
+            left: 9vh;
+
+            position: absolute;
+        }
+
+        #mesageside {
+            height: 100%;
+            width: 66vh;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+        }
+
+        #mesagebottomside {
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            height: 15%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #textside {
+            height: 40%;
+            border-radius: 12vh;
+            width: 90%;
+            background-color: rgb(39, 39, 39);
+
+        }
+
+        #txtinpt {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            border: transparent;
+        }
+
+        #txtinpt:focus {
+            outline: none;
+            color: white;
+            font-family: "Inter", sans-serif;
+
+        }
+
+        #sendbuton {
+            border-radius: 100%;
+            background-color: #055BDD;
+            height: 3vh;
+            width: 3vh;
+            position: absolute;
+            right: 4vh;
+            top: 33%;
+        }
+
+        #sendbuton:hover {
+            filter: brightness(0.7);
+            cursor: pointer;
+        }
+
+        .mesageside {
+            height: 85%;
+            width: 80%;
+            left: 10%;
+            position: absolute;
+            overflow-y: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+        .mesages {
+            height: 10vh;
+            width: 30vh;
+            border-radius: 2vh;
+            margin-bottom: 2vh;
+            color: white;
+            font-family: "Inter", sans-serif;
+            display: flex;
+            padding-left: 1vh;
+            padding-right: 1vh;
+            align-items: center;
+        }
+
+        .leftmes {
+            background-color: #757f8f;
+            text-align: left;
+
+        }
+
+        .rightmes {
+            position: relative;
+            left: 20vh;
+            text-align: right;
+
+            background-color: #17dd05;
+
+        }
+        .time{
+            font-size: 1vh;
+            bottom: -4vh;
+            right: -1vh;
+            position: relative
+        }
+        .rtime{
+            right: 0vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainarea">
+        <div id="toparea">
+            <div id="leftlogo" onclick="window.location='ellenmain.html'"></div>
+            <h4 id="lefttext">Fredicin Kokeellinen Yksikkö</h4>
+            <div onclick="ppbutonclik()" id="profilelogo"></div>
+            <div id="topbutonsback">
+                <div class="topbutons" onclick="window.location='elleninfo.html'">Hakkımızda</div>
+                <div class="topbutons" onclick="window.location='vdeneyler.html'">Deneyler</div>
+                <div class="topbutons" onclick="window.location='ellenilaclar.html'">İlaçlar</div>
+                <div class="topbutons" onclick="window.location='ellencontact.html'">İletişim</div>
+            </div>
+        </div>
+        <div id="profilearea">
+            <div id="profilepanel" class="topprofilbutons" onclick="window.location='profile.html'">
+                <div id="profilepanellogo"></div>
+                Profilim
+            </div>
+            <div style="color: rgb(146, 146, 146);" class="topprofilbutons" onclick="alert('bu özellik devre dışı')">
+                Hesap Oluştur</div>
+            <div class="topprofilbutons" onclick="window.location='ellendeneyler.html'">Deneyler</div>
+            <div class="topprofilbutons" onclick="window.location='ellenilaclar.html'">İlaçlar</div>
+            <div class="topprofilbutons" onclick="window.location='ellencontact.html'">İletişim</div>
+            <div class="topprofilbutons" onclick="window.location='ellenwork.html'">Çalışmak ister misin?</div>
+        </div>
+
+        <div id="profileback">
+            <div id="leftside">
+                <div onclick="changearea('hakkımda')" class="leftbutons">Hakkımda</div>
+                <div onclick="changearea('mesajlar')" class="leftbutons">Mesajlar</div>
+                <div onclick="changearea('gelenkutu')" class="leftbutons">Gelen kutusu</div>
+                <div onclick="changearea('bildirim')" class="leftbutons">Bildirimler</div>
+            </div>
+            <div id="hakkımda" class="rightside">
+                <img src="ellen.png"
+                    style="aspect-ratio: 1/1; border-radius: 100%; height: 20vh; object-fit: cover; position: absolute; left: 10vh; top: 10vh;">
+                <h3 style="color: white;  position: absolute; right: 10vh; width: 50vh; top: 15vh;">Ben Ellen, 1994
+                    doğumluyum. gözlerimde, ışığa hassasiyet var. Çocukları severim. Akıl sağlığı raporumu 2019'da
+                    güncellettim. Herhangi bir sorunum yok.</h3>
+            </div>
+            <div id="mesajlar" class="rightside">
+
+                <div id="mesageleft">
+                    <div class="mesageuser" onclick="changemesage('fredic')">
+                        <img src="bimo.png" class="mesagepp"></img>
+                        <h2 class="mesagetext">Fredic</h2>
+                    </div>
+                    <div class="mesageuser" onclick="changemesage('bimo')">
+                        <img src="bimo.png" class="mesagepp"></img>
+                        <h2 class="mesagetext">Bimo</h2>
+                    </div>
+                    <div class="mesageuser" onclick="changemesage('carmella')">
+                        <img src="bimo.png" class="mesagepp"></img>
+                        <h2 class="mesagetext">Carmella</h2>
+                    </div>
+                    <div class="mesageuser" onclick="changemesage('bonita')">
+                        <img src="bimo.png" class="mesagepp"></img>
+                        <h2 class="mesagetext">Bonita</h2>
+                    </div>
+                </div>
+
+                <div id="mesageside">
+
+                    <div class="mesageside" id="fredic">
+                        <div class="mesages leftmes">Selam Ellen buralarda mısın?
+                            <h3 class="time">11.02.2011</h3>
+                        </div>
+                        <div class="mesages rightmes">Evet buralardayım sorun nedir?
+                            <h3 class="time rtime">11.02.2011</h3>
+                        </div>
+                        <div class="mesages leftmes">Sorun bi deney. Yakında sana bilgi geçeceğim bu biraz garip sana göndereceğim zarfta yazıyor her şey.
+                            <h3 class="time">11.02.2011</h3>
+                        </div>
+                        <div class="mesages leftmes"> Bir ekibin olacak kuralların dışına çıkma yeter.
+                            <h3 class="time">11.02.2011</h3>
+                        </div>
+                        <div class="mesages rightmes">Sıkınt yok haber bekliyorum.
+                            <h3 class="time rtime">11.02.2011</h3>
+                        </div>
+                        <div class="mesages rightmes">Bebek elimize ulaştı. Biz başlıyoruz.
+                            <h3 class="time rtime">26.07.2011</h3>
+                        </div>
+                        <div class="mesages rightmes">Her şey çok güzel ilerliyor. çocuk o kadar tatlı ki.
+                            <h3 class="time rtime">04.09.2011</h3>
+                        </div>
+                        <div class="mesages leftmes">Bebekle bağ kurmana sevindim, ama amacını unutma.
+                            <h3 class="time">05.09.2011</h3>
+                        </div>
+                        <div class="mesages rightmes">Burası sıkıcı bari gün içerisinde Bimoyla görüşebilmek iyi olurdu.
+                            <h3 class="time rtime">28.02.2012</h3>
+                        </div>
+                        <div class="mesages rightmes">Deacon garip davranıyor, bilmiyorum biraz garipç
+                            <h3 class="time rtime">22.07.2014</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="mesageside" id="bimo">
+                        <div class="mesages rightmes">Naber bimo?
+                            <h3 class="time rtime">19.11.2015</h3>
+                        </div>
+                        <div class="mesages leftmes">İyi Ellen senden?
+                            <h3 class="time">19.11.2015</h3>
+                        </div>
+                        <div class="mesages rightmes">Deacon dışarıda kızlar da biliyosun eve yaklaşamıyorlar istiyosan gel deney notuna yazmam
+                            <h3 class="time rtime">19.11.2015</h3>
+                        </div>
+                        <div class="mesages leftmes">Teşekkür ederim böyle iyiyim.
+                            <h3 class="time">19.11.2015</h3>
+                        </div>
+                        <div class="mesages rightmes">Bimoo
+                            <h3 class="time rtime">22.11.2015</h3>
+                        </div>
+                        <div class="mesages leftmes">Efendim ellen.
+                            <h3 class="time">22.11.2015</h3>
+                        </div>
+                        <div class="mesages rightmes">rapor tutmaktan canım sıkıldı gelmek ister misin?
+                            <h3 class="time rtime">22.11.2015</h3>
+                        </div>
+                        <div class="mesages leftmes">Teşekkür ederim rapor tutmam gerekiyor.
+                            <h3 class="time">22.11.2015</h3>
+                        </div>
+                        <div class="mesages rightmes">gel beraber tutalım işte?
+                            <h3 class="time rtime">22.11.2015</h3>
+                        </div>
+                        <div class="mesages leftmes">hikayeyi unutma görüşmemiz yasak ben ölüyüm.
+                            <h3 class="time">22.11.2015</h3>
+                        </div>
+                        <div class="mesages rightmes">yemin ederim rapor tutmam kimse görmez de
+                            <h3 class="time rtime">22.11.2015</h3>
+                        </div>
+                        <div class="mesages leftmes">Hayır ellen. rapor yazmayı unutma...
+                            <h3 class="time">22.11.2015</h3>
+                        </div>
+                    </div>
+
+                    <div class="mesageside" id="carmella">
+                        <div class="mesages leftmes">abla bonita denizel'i görmek istiyor onu özlüyormuş
+                            <h3 class="time">02.05.2019</h3>
+                        </div>
+                        <div class="mesages rightmes">Siz gerizekalı mısınız? sence böyle bir şeye izin verirler mi uzak durun denizelden onun yanında bonitayı görmeyeceğim
+                            <h3 class="time rtime">02.05.2019</h3>
+                        </div>
+                    </div>
+                    <div class="mesageside" id="bonita">
+                        <div class="mesages rightmes">Kuralları bilmiyor musun? neden çocukla görüşmek istiyorsun?
+                            <h3 class="time rtime">02.05.2019</h3>
+                        </div>
+                        <div class="mesages leftmes">özür dilerim ama bilmiyorum kusura bakma.
+                            <h3 class="time">02.05.2019</h3>
+                        </div>
+                       
+                    </div>
+
+                    <div id="mesagebottomside">
+                        <div id="textside">
+                            <input id="txtinpt">
+                            <div id="sendbuton" onclick="alert('mesaj gönderme isteğe alınamadı.')"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="gelenkutu" class="rightside">
+                <h3 style="color: white;  position: absolute; right: 10vh; width: 50vh; top: 15vh;">Okunmamış ileti yok
+                </h3>
+
+            </div>
+            <div id="bildirim" class="rightside">
+                <h3 style="color: white;  position: absolute; right: 10vh; width: 50vh; top: 15vh;">Bildirim gözükmüyor
+                </h3>
+            </div>
+
+        </div>
+
+        <h2 style="position: absolute; bottom: 0; font-family: 'Inter', sans-serif; left: 13%;" id="botomtext">Fredicin
+            Kokeellinen Yksikkö kar amacı güderek insanlığı bir üst seviyeye taşımayı hedefleyen ilaç şirketi ve deney
+            kuruluşudur.</h2>
+
+    </div>
+
+    <script>
+        document.getElementById("fredic").style.display = "";
+        document.getElementById("bimo").style.display = "none";
+        document.getElementById("carmella").style.display = "none";
+        document.getElementById("bonita").style.display = "none";
+        function changemesage(user) {
+            if (user == "fredic") {
+                document.getElementById("fredic").style.display = "";
+                document.getElementById("bimo").style.display = "none";
+                document.getElementById("carmella").style.display = "none";
+                document.getElementById("bonita").style.display = "none";
+            } else if (user == "bimo") {
+                document.getElementById("fredic").style.display = "none";
+                document.getElementById("bimo").style.display = "";
+                document.getElementById("carmella").style.display = "none";
+                document.getElementById("bonita").style.display = "none";
+            } else if (user == "carmella") {
+                document.getElementById("fredic").style.display = "none";
+                document.getElementById("bimo").style.display = "none";
+                document.getElementById("carmella").style.display = "";
+                document.getElementById("bonita").style.display = "none";
+            } else if (user == "bonita") {
+                document.getElementById("fredic").style.display = "none";
+                document.getElementById("bimo").style.display = "none";
+                document.getElementById("carmella").style.display = "none";
+                document.getElementById("bonita").style.display = "";
+            }
+        }
+
+        document.getElementById("hakkımda").style.display = "none";
+        document.getElementById("mesajlar").style.display = "";
+        document.getElementById("gelenkutu").style.display = "none";
+        document.getElementById("bildirim").style.display = "none";
+        function changearea(alan) {
+            if (alan == "hakkımda") {
+
+                document.getElementById("hakkımda").style.display = "";
+                document.getElementById("mesajlar").style.display = "none";
+                document.getElementById("gelenkutu").style.display = "none";
+                document.getElementById("bildirim").style.display = "none";
+            }
+            else if (alan == "mesajlar") {
+                document.getElementById("hakkımda").style.display = "none";
+                document.getElementById("mesajlar").style.display = "";
+                document.getElementById("gelenkutu").style.display = "none";
+                document.getElementById("bildirim").style.display = "none";
+            }
+            else if (alan == "gelenkutu") {
+                document.getElementById("hakkımda").style.display = "none";
+                document.getElementById("mesajlar").style.display = "none";
+                document.getElementById("gelenkutu").style.display = "";
+                document.getElementById("bildirim").style.display = "none";
+            }
+            else if (alan == "bildirim") {
+                document.getElementById("hakkımda").style.display = "none";
+                document.getElementById("mesajlar").style.display = "none";
+                document.getElementById("gelenkutu").style.display = "none";
+                document.getElementById("bildirim").style.display = "";
+            }
+
+        }
+        document.getElementById("profilearea").style.display = "none";
+        let pparea = false;
+        function ppbutonclik() {
+            pparea = !pparea;
+            if (pparea) {
+                document.getElementById("profilearea").style.display = "";
+            } else {
+                document.getElementById("profilearea").style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

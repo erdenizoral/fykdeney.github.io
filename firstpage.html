@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #firstallert {
+            background-color: #9A9A9A;
+            border-radius: 1vh;
+            height: 50%;
+            width: 50%;
+            position: absolute;
+            box-shadow: 0 0 2vh black;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            position: relative;
+            top: 20%;
+            font-size: 4vh;
+
+        }
+
+        .buton {
+            height: 13%;
+            width: 25%;
+            position: absolute;
+            color: white;
+            text-align: center;
+            display: grid;
+            align-items: center;
+            border-radius: 2vh;
+            font-size: 2vh;
+        }
+        .buton:hover{
+            filter: brightness(0.5);
+            cursor: pointer;
+        }
+        #yesbuton {
+            background-color: green;
+            left: 10%;
+            bottom: 20%;
+        }
+
+        #nobuton {
+            background-color: rgb(255, 0, 0);
+            right: 10%;
+            bottom: 20%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="firstallert">
+        <h1>Tarayıcı dili türkçe olarak algılandı.<br>
+            Bu şekilde devam etmek istiyor musunuz?</h1>
+        <div id="yesbuton" onclick="window.location='secondpage.html';" class="buton">EVET</div>
+        <div id="nobuton" onclick="alert('bir hata oluştu lütfen daha sonra tekrar deneyiniz.')" class="buton">HAYIR</div>
+    </div>
+
+</body>
+
+</html>

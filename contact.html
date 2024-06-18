@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mainarea {
+            width: 100%;
+            height: 230%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+
+        }
+
+        #toparea {
+            width: 100%;
+            height: 5%;
+            position: sticky;
+            left: 0;
+            top: 0;
+            z-index: 4;
+            background-color: #055BDD;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #leftlogo {
+            height: 10vh;
+            width: 10vh;
+            left: 1vh;
+            position: relative;
+            margin-right: 2vh;
+            background-image: url(logo.png);
+            background-size: contain;
+            transition: all 200ms;
+        }
+
+        #leftlogo:hover {
+            cursor: pointer;
+            filter: brightness(0.7);
+
+        }
+
+        #lefttext {
+            color: white;
+            font-family: "Inter", sans-serif;
+            position: relative;
+            font-size: 3vh;
+        }
+
+        #profilelogo {
+            height: 7vh;
+            width: 7vh;
+            background-image: url(pp.png);
+            background-size: contain;
+            right: -110vh;
+            position: relative;
+            margin-left: 5vh;
+            transition: all 500ms;
+        }
+
+        #profilelogo:hover {
+            filter: brightness(0.4);
+            cursor: pointer;
+        }
+
+        #topbutonsback {
+            height: 40%;
+            width: 30%;
+            position: relative;
+            left: 40vh;
+            display: flex;
+            font-family: "Inter", sans-serif;
+
+        }
+
+        .topbutons {
+            height: 100%;
+            width: 30%;
+            font-size: 2vh;
+            color: white;
+            text-align: center;
+            display: grid;
+            align-items: center;
+        }
+
+        .topbutons:hover {
+            filter: brightness(0.7);
+            cursor: pointer;
+        }
+
+        #profilearea {
+            height: 50vh;
+            width: 30vh;
+            background-color: #80808098;
+            position: absolute;
+            right: 1vh;
+            z-index: 3;
+            backdrop-filter: blur(0.3vh);
+        }
+
+        .topprofilbutons {
+            height: calc(100%/6);
+            color: white;
+
+            display: grid;
+            align-items: center;
+            padding-left: 3vh;
+            font-family: "Inter", sans-serif;
+            font-size: 2.5vh;
+            transition: all 1s;
+        }
+
+        .topprofilbutons:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        #profilepanel {
+            padding-left: 10vh;
+            font-size: 2.9vh;
+        }
+
+        #profilepanellogo {
+            background-image: url(pp.png);
+            background-size: contain;
+            height: 5vh;
+            width: 5vh;
+            position: absolute;
+            left: 2.5vh;
+        }
+
+        #newone {
+            height: 50vh;
+            width: 150vh;
+            margin: auto;
+            top: 13vh;
+            position: relative;
+        }
+
+        #pageoneimg {
+            height: 90%;
+            aspect-ratio: 0.7/1;
+            object-fit: cover;
+        }
+
+        #newtwo {
+            height: 50vh;
+            width: 150vh;
+            margin: auto;
+            top: 30vh;
+            position: relative;
+        }
+
+        #pagetwoimg {
+            height: 90%;
+            aspect-ratio: 0.7/1;
+            object-fit: cover;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainarea" onclick="hidesoms()">
+        <div id="toparea">
+            <div id="leftlogo" onclick="window.location='main.html'"></div>
+            <h4 id="lefttext">Fredicin Kokeellinen Yksikkö</h4>
+            <div onclick="ppbutonclik()" id="profilelogo"></div>
+            <div id="topbutonsback">
+                <div class="topbutons" onclick="window.location='info.html'">Hakkımızda</div>
+                <div class="topbutons" onclick="window.location='deneyler.html'">Deneyler</div>
+                <div class="topbutons" onclick="window.location='ilaclar.html'">İlaçlar</div>
+                <div class="topbutons" onclick="window.location='contact.html'">İletişim</div>
+            </div>
+        </div>
+        <div id="profilearea">
+            <div id="profilepanel" class="topprofilbutons" onclick="window.location='login.html'">
+                <div id="profilepanellogo"></div>
+                Giriş Yap
+            </div>
+            <div class="topprofilbutons" onclick="alert('bu özellik devre dışı')">Hesap Oluştur</div>
+            <div class="topprofilbutons" onclick="window.location='deneyler.html'">Deneyler</div>
+            <div class="topprofilbutons" onclick="window.location='ilaclar.html'">İlaçlar</div>
+            <div class="topprofilbutons" onclick="window.location='contact.html'">İletişim</div>
+            <div class="topprofilbutons"onclick="window.location='work.html'">Çalışmak ister misin?</div>
+        </div>
+
+
+        <div id="newone">
+            <h2
+                style=" width: 115vh; height: 90%; font-family: 'Inter', sans-serif; font-size: 3vh; position: absolute; right: 0;">
+                Şirketin kurucularından olan Fredic Quezberg hayatı boyunca bir çok işşe imza atmıştır. Hayali
+                geliştirmekte olduğu Crisp Cas9 isimli cihaz ve teknolojinin bir üst seviyeye çıkarak, insanlığın
+                ilerlemesine katkıda bulunmaktır. Misyonunu ilerletirken, şirket içerisinde bulunan çalışanların can
+                güvenliğile birinci odaktan ilgilenmektedir. Şirketinin amacını ilaç üretmekten çok ilaç yaratmak
+                olduğunu bir çok konferansında bildirmiştir.</h2>
+            <img src="asd.gif" id="pageoneimg"></img>
+            <h3 style="position: absolute; bottom: 0.8vh; left: 7vh;">Fredic Quezberg</h3><br>
+            <h4 style="position: absolute; bottom: -1.5vh; left: 12vh;">CEO</h4>
+        </div>
+
+
+        <div id="newtwo">
+            <h2
+                style="text-align: right; width: 115vh; height: 90%; font-family: 'Inter', sans-serif; font-size: 3vh; position: absolute; left: 0;">
+                Baş mühendis ellen, çocukluğundan beri bir çok deneyde insanlarla iletişimde kalmıştır. Bu sebeple FKY
+                onu deneylerinde baş bakıcı konumunda tutar. FKY olarak tutumumuz insanları geçmişiyle yargılamaktan
+                ötededir. Profosyonel olmamız gereken bu işte, kişileri sabıkalarına veya geçmiş hayatlarına göre
+                yargılamamalıyız.</h2>
+            <img src="ellen.png" id="pagetwoimg"></img>
+            <h3 style="position: absolute; bottom: 0.8vh; right: 11vh;">Ellen Gino</h3><br>
+            <h4 style="position: absolute; bottom: -1.5vh; right: 8.5vh;">Baş bakıcı/kimyager</h4>
+        </div>
+
+        <div id="newone" style="top: 60vh;">
+            <h2
+                style=" width: 115vh; height: 90%; font-family: 'Inter', sans-serif; font-size: 3vh; position: absolute; right: 0;">
+                Baş mühendis Bimo, şirketimizin en başarılı mucitlerinden birisidir. Crisp Cas9'un yapım ekibinin
+                başında olan Bimo, Şu anda 248 deneyinde görev almaktadır.<br>[Veri Silindi]<br>[Veri Silindi]<br>[Veri
+                Silindi]</h2>
+            <img src="bimo.png" id="pageoneimg"></img>
+            <h3 style="position: absolute; bottom: 0.8vh; left: 12vh;">Bimo Rose</h3><br>
+            <h4 style="position: absolute; bottom: -1.5vh; left: 11.5vh;">Baş mühendis</h4>
+        </div>
+
+
+        <h2 style="position: absolute; bottom: 0; font-family: 'Inter', sans-serif; left: 13%;" id="botomtext">Fredicin
+            Kokeellinen Yksikkö kar amacı güderek insanlığı bir üst seviyeye taşımayı hedefleyen ilaç şirketi ve deney
+            kuruluşudur.</h2>
+
+    </div>
+
+    <script>
+        document.getElementById("profilearea").style.display = "none";
+        let pparea = false;
+        function ppbutonclik() {
+            pparea = !pparea;
+            if (pparea) {
+                document.getElementById("profilearea").style.display = "";
+            } else {
+                document.getElementById("profilearea").style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
